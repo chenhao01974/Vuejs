@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--v-if:当条件为fasle时，包含v-if的指令的元素，根本就不存在在DOM中-->
+  <h2 v-if="isShow" id="aaa">{{message}}</h2>
+
+  <!--v-show:当我们条件为fasle时，v-show只是给元素增加了一个行内样式，display:none-->
+  <h2 v-show="isShow" id="bbb">{{message}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      isShow: true,
+    }
+  })
+</script>
+</body>
+</html>

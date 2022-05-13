@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+  <img :src="imgURL">
+<!--  <a href="http://www.baidu.com">www.baidu.com</a>-->
+  <a :href="aHref">百度一些</a>
+  <a :href="aHref">百度一下</a>
+
+  <div class=""></div>
+
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      imgURL: 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png',
+      aHref: 'http://www.baidu.com',
+    }
+  })
+</script>
+</body>
+</html>

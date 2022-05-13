@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <h2>{{fullName}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      firstName: 'Kobe',
+      lastName: 'Bryant',
+    },
+    computed: {
+      //计算属性一般没有set方法，只读属性
+      fullName: {
+        set: function (newValue){
+          var split = newValue.split(' ');
+          this.firstName = split[0];
+          console.log(split[0]);
+          this.lastName = split[1];
+          console.log(split[1]);
+        },
+        get: function (){
+          return this.firstName+' '+this.lastName;
+        }
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

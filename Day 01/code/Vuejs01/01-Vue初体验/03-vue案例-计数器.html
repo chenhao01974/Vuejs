@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>当前计数：{{counter}}</h2>
+<!--    <button v-on:click="counter++">+</button>-->
+<!--    <button v-on:click="counter&#45;&#45;")">-</button>-->
+    <button v-on:click="add()">+</button>
+    <button v-on:click="del()">-</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const obj = {
+        counter: 0,
+    };
+    const app = new Vue({
+        el: '#app',
+        data: obj,
+        methods: {
+          add:function (){
+              console.log("add执行");
+              this.counter++;
+          },
+            del:function (){
+              console.log("del执行");
+              this.counter--;
+            }
+        },
+        beforeCreate:function (){
+            console.log('beforeCreate')
+        },
+        created:function (){
+            console.log('create')
+        }
+    })
+</script>
+
+</body>
+</html>
