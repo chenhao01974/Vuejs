@@ -65,11 +65,15 @@ const app = new Vue({
       // return totalPrice;
 
       //3、for(let i of this.books)
-      let totalPrice = 0;
-      for (let item of this.books){
-        totalPrice += item.price * item.count
-      }
-      return totalPrice;
+      // let totalPrice = 0;
+      // for (let item of this.books){
+      //   totalPrice += item.price * item.count
+      // }
+      // return totalPrice;
+
+      return this.books.reduce(function (preValue, book){
+        return preValue + book.price * book.counter
+      },0)
     }
   },
   filters: {
@@ -77,12 +81,4 @@ const app = new Vue({
       return '￥'+price.toFixed(2);
     }
   }
-
 })
-
-// 编程范式： 命令式编程/声明式编程
-// 编程格式： 面向对象编程(第一公民:对象)/函数式编程(第一公民:函数)
-const nums = [10,20,30,40,111,222,444,40,23]
-
-//1、需求：取出所有小于100的数字
-
