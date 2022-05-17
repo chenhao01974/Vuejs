@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <cpn :number1="num1"></cpn>
+    <cpn :number2="num2"></cpn>
+  </div>
+  <template id="cpn">
+    <div>
+      {{number1}}
+      <input type="text" v-model="">
+      {{number2}}
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        num1: 1,
+        num2: 0,
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+          props: {
+            number1: Number,
+            number2: Number,
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
